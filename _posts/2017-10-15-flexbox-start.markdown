@@ -16,7 +16,7 @@ The container or parent element is called "flex container" while the children ar
 	<figcaption>Image Credit: CSS-Tricks</figcaption>
 </figure>
 
-### flex direction
+### flex-direction
 
 The default direction of the main-axis is from left to right while the direction of cross-axis is from top to bottom. However, this can be changed by Flexbox property **flex-direction**. To understand how flex-direction changes these axes we need to see some code example.
 
