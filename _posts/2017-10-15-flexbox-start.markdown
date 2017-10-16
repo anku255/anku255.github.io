@@ -3,7 +3,7 @@ layout: post
 title: "Understanding flex-direction in Flexbox"
 date: 2017-10-15
 ---
-I face a lot of problems when centering things in CSS. So I finally decided to learn CSS Flexbox. I started with Wes Bos's course <a href="https://flexbox.io/" target="_blank">What The Flexbox</a>. It's a great free course, check it out if you want to learn flexbox.
+<p class="intro"><span class="dropcap">I</span> face a lot of problems when centering things in CSS. So I finally decided to learn CSS Flexbox. I started with Wes Bos's course <a href="https://flexbox.io/" target="_blank">What The Flexbox</a>. It's a great free course, check it out if you want to learn flexbox.</p>
 
 ### Introduction
 
