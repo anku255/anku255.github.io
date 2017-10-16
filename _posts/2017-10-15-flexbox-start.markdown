@@ -46,7 +46,7 @@ I have taken a container div (flex container) and there are 8 divs (flex items) 
 For Flexbox to work we need to set the display property of container to flex. The default flex-direction is row and it would align the flex items as below:
 
 <figure>
-	<img src="{{ '/assets/img/posts/flex-direction-row.png' | prepend: site.baseurl }}" alt="postion of flex items for default flex-direction"> 
+	<img src="{{ '/assets/img/posts/flex-direction-row.png' | prepend: site.baseurl }}" alt="position of flex items for default flex-direction"> 
 	<figcaption>flex-direction: row</figcaption>
 </figure>
 
@@ -56,21 +56,21 @@ There are mainly four values for flex-direction - **row**, **row-reverse**, **co
 `flex-direction: row-reverse` changes the direction of main-axis from left to right.
 
 <figure>
-	<img src="{{ '/assets/img/posts/flex-direction-row-reverse.png' | prepend: site.baseurl }}" alt="postion of flex items for row-reverse flex-direction"> 
+	<img src="{{ '/assets/img/posts/flex-direction-row-reverse.png' | prepend: site.baseurl }}" alt="position of flex items for row-reverse flex-direction"> 
 	<figcaption>flex-direction: row-reverse</figcaption>
 </figure>
 
 `flex-direction: column` changes the direction of main-axis from top to bottom.
 
 <figure>
-	<img src="{{ '/assets/img/posts/flex-direction-column.png' | prepend: site.baseurl }}" alt="postion of flex items for column flex-direction"> 
+	<img src="{{ '/assets/img/posts/flex-direction-column.png' | prepend: site.baseurl }}" alt="position of flex items for column flex-direction"> 
 	<figcaption>flex-direction: column</figcaption>
 </figure>
 
 `flex-direction: column-reverse` changes the direction of main-axis from bottom to top.
 
 <figure>
-	<img src="{{ '/assets/img/posts/flex-direction-column-reverse.png' | prepend: site.baseurl }}" alt="postion of flex items for column-reverse flex-direction"> 
+	<img src="{{ '/assets/img/posts/flex-direction-column-reverse.png' | prepend: site.baseurl }}" alt="position of flex items for column-reverse flex-direction"> 
 	<figcaption>flex-direction: column-reverse</figcaption>
 </figure>
 
