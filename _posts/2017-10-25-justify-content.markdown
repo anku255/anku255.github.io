@@ -52,28 +52,28 @@ The above code produces following output:
 
 `justify-content` defines the alignment of flex-items along the main-axis in a flex-container. It also helps distribute extra free space left over when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size.
 
-The default value for `justify-content` is `flex-start` which aligns the flex-items towards the start of the main axis. If we change value of `justify-content` to `flex-end` then it will align flex-items towards the end of the main axis as seen below:
+The default value for `justify-content` is `flex-start` which aligns the flex-items towards the start of the main axis. If we change the value of `justify-content` to `flex-end` then it will align flex-items towards the end of the main axis as seen below:
 
 <figure>
   <img src="{{ '/assets/img/posts/justify-content-flex-end.png' | prepend: site.baseurl }}">
   <figcaption>justify-content: flex-end</figcaption>
 </figure>
 
-Changing `flex-items` to `center` will align all the flex-items to center of the main axis (see, how easy it is to center in Flexbox) as seen below:
+Changing `flex-items` to `center` will align all the flex-items to the center of the main axis (see, how easy it is to center in Flexbox) as seen below:
 
 <figure>
   <img src="{{ '/assets/img/posts/justify-content-center.png' | prepend: site.baseurl }}">
   <figcaption>justify-content: center</figcaption>
 </figure>
 
-To distribute the extra space among all the flex-items we can set `justify-content` to `space-between`. The first item is on the start of main axis while the last item is on the end of main axis as seen below:
+To distribute the extra space among all the flex-items we can set `justify-content` to `space-between`. The first item is on the start of the main axis while the last item is on the end of the main axis as seen below:
 
 <figure>
   <img src="{{ '/assets/img/posts/justify-content-space-between.png' | prepend: site.baseurl }}">
   <figcaption>justify-content: space-between</figcaption>
 </figure>
 
-We can see that first and last flex-items don't have margin on the left and right side respectively. We can fix this by changing `justify-content` to `space-around`.
+We can see that first and last flex-items don't have the margin on the left and right side respectively. We can fix this by changing `justify-content` to `space-around`.
 
 <figure>
   <img src="{{ '/assets/img/posts/justify-content-space-around.png' | prepend: site.baseurl }}">
