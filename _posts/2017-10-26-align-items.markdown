@@ -4,7 +4,7 @@ title: Difference between align-items and align-content in Flexbox
 date: 2017-10-26
 ---
 
-<p class="intro"><span class="dropcap">I</span>n my <a href="https://anku255.github.io/blog/justify-content/">last post</a>, I discussed about <code>justify-content</code>. Today, I will talk about the difference between <code>align-items</code> and <code>align-content</code>.</p>
+<p class="intro"><span class="dropcap">I</span>n my <a href="https://anku255.github.io/blog/justify-content/">last post</a>, I discussed <code>justify-content</code>. Today, I will talk about the difference between <code>align-items</code> and <code>align-content</code>.</p>
 
 Below, I have some divs (flex-items) inside a container div (flex-container) in an HTML document. The CSS style is also given below.
 
@@ -49,7 +49,7 @@ Below, I have some divs (flex-items) inside a container div (flex-container) in 
 
 ### align-items
 
-`align-items` is used to align flex-items along the cross axis in a flex-container. The default direction of cross axis is from top to bottom. You must be thinking that to center the flex-items vertically we can set `align-items` to `center` and you are right but there is a catch! Let us find it out by setting `align-items` to `center` and see the output.
+`align-items` is used to align flex-items along the cross axis in a flex-container. The default direction of cross-axis is from top to bottom. You must be thinking that to center the flex-items vertically we can set `align-items` to `center` and you are right but there is a catch! Let us find it out by setting `align-items` to `center` and see the output.
 
 ```css
 .container {
@@ -64,7 +64,7 @@ Below, I have some divs (flex-items) inside a container div (flex-container) in 
   <figcaption>align-items: center</figcaption>
 </figure>
 
-What is wrong with the output? It should have been vertically centered but it is not. Why? The answer to this question is hidden in the definition of `align-items`. It aligns the flex-items along cross-axis but only inside its flex-container. The black border shows us the height of the container, which is same as the height of flex-items. That is why we see no change. Let's change the height of container and see what happens.
+What is wrong with the output? It should have been vertically centered but it is not. Why? The answer to this question is hidden in the definition of `align-items`. It aligns the flex-items along cross-axis but only inside its flex-container. The black border shows us the height of the container, which is same as the height of flex-items. That is why we see no change. Let's change the height of the container and see what happens.
 
 ```css
 .container {
@@ -80,7 +80,7 @@ What is wrong with the output? It should have been vertically centered but it is
   <figcaption>They are vertically centered, aren't they?</figcaption>
 </figure>
 
-Now that `align-items: center` is working, let us try other values of align-items. The other possible values of `align-items` are `flex-start`, `flex-end`, `stretch` and `baseline`.
+Now that `align-items: center` is working, let us try other values of align-items. The other possible values of `align-items` are `flex-start`, `flex-end`, `stretch`, and `baseline`.
 
 
 <figure>
@@ -117,7 +117,7 @@ In `baseline`, flex-items are algined as their baselines align as seen below:
 
 ### align-content
 
-`align-content` is a bit tricky. First of all it only works for multiline flex-items. So, we will have to wrap the flex-items. `align-content` deals with the extra space along cross-axis just like `justify-content` does for main-axis. First, let us make the necessary changes in CSS to understand `align-content`.
+`align-content` is a bit tricky. First of all, it only works for multiline flex-items. So, we will have to wrap the flex-items. `align-content` deals with the extra space along cross-axis just like `justify-content` does for main-axis. First, let us make the necessary changes in CSS to understand `align-content`.
 
 ```css
 .container {
@@ -139,7 +139,7 @@ The default value of `align-content` is `stretch` which stretches flex-items to 
   <figcaption>align-content-stretch</figcaption>
 </figure>
 
-The other possible values of `align-content` are `flex-start`, `flex-end`, `center`, `space-between` and `space-around`. The output for each of these is given below:
+The other possible values of `align-content` are `flex-start`, `flex-end`, `center`, `space-between`, and `space-around`. The output for each of these is given below:
 
 <figure>
   <img src="{{ '/assets/img/posts/align-content-flex-start.png' | prepend: site.baseurl }}">
