@@ -61,7 +61,7 @@ I am going to use below code sample to explain the working of `align-self`.
   <figcaption>Output for starter code</figcaption>
 </figure>
 
-`align-self` is basically `align-item` which works for single flex-item. I have already discussed `align-item` <a href="https://anku255.github.io/blog/align-items/">here</a>. `align-self`, aligns the particular flex-item with respect to the cross-axis. The possile values for `align-self` are `flex-start`, `flex-end`, `center`, `stretch` and `baseline`. I am going to apply `align-self` on box 5. All the outputs are given below:
+`align-self` is basically `align-item` which works for single flex-item. I have already discussed `align-item` <a href="https://anku255.github.io/blog/align-items/">here</a>. `align-self` aligns the particular flex-item with respect to the cross-axis. The possible values for `align-self` are `flex-start`, `flex-end`, `center`, `stretch`, and `baseline`. I am going to apply `align-self` on box 5. All the outputs are given below:
 
 ```css
 .box5 {
@@ -123,6 +123,6 @@ I am going to use below code sample to explain the working of `align-self`.
   <figcaption>align-self: baseline</figcaption>
 </figure>
 
-This is all about `align-self` in Fexbox. I am taking a Flexbox course <a href="https://flexbox.io" target="_blank" >What The Flex Box </a> by Wes Bos. It is a great course. Be sure to check it out if you want to learn Flexbox in depth.
+This is all about `align-self` in Flexbox. I am taking a Flexbox course <a href="https://flexbox.io" target="_blank" >What The Flex Box </a> by Wes Bos. It is a great free course. Be sure to check it out if you want to learn Flexbox in depth.
 
 
