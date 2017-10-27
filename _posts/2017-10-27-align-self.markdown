@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What is the use of align-content in Flexbox
+title: What is the use of align-self in Flexbox
 date: 2017-10-27
 ---
 
