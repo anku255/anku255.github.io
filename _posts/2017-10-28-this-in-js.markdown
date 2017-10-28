@@ -9,7 +9,7 @@ date: 2017-10-28
 I have taken Colt Steel's <a href="https://www.udemy.com/the-web-developer-bootcamp/" target="_blank">Web Developer Bootcamp</a>. In that course, Elie has explained `this keyword` pretty well. I am going to use his method or his rules to explain `this keyword` here.
 
 
-Let us start by asking what `this keyword` really is? Well, `this` is a reserved keyword in javascript whose value gives the context of current scope. It's value can be determined using four rules (global, object/implicit, explicit, new).
+Let us start by asking what `this keyword` really is? Well, `this` is a reserved keyword in javascript whose value gives the context of the current scope. Its value can be determined using four rules (global, object/implicit, explicit, new).
 
 ### 1 - Global Context
 
@@ -58,7 +58,7 @@ person.sayHi(); // Hi! Anku
 person.determineContext(); // true
 ```
 
-Inside `sayHi` and `determineContext` functions we used `this` and it's value was it's closest parent object (person object). So far so good right? Let us have a look at nested objects.
+Inside `sayHi` and `determineContext` functions we used `this` and its value was its closest parent object (person object). So far so good right? Let us have a look at nested objects.
 
 ```js
 let person = {
@@ -109,7 +109,7 @@ We can set/change the value of this inside any function by using `call`, `apply`
 
 #### Working with call
 
-The call method takes the value of `this` and infinite number of optional arguments. Above, when we called `sayHello` function inside `dog` object, it returned `Hello! undefined`. I want to change the value of `this` inside `dog` object to the `person` object and call the function.
+The call method takes the value of `this` and an infinite number of optional arguments. Above, when we called `sayHello` function inside `dog` object, it returned `Hello! undefined`. I want to change the value of `this` inside `dog` object to the `person` object and call the function.
 
 ```js
 // I am passing person as the arugment to call
@@ -120,7 +120,7 @@ Now, when we ask the value `this.firstName` inside `dog` object, it refers to th
 
 #### Working with apply
 
-The `apply` method is exactly similar to `call` except that it only takes two arguments. First the value of `this` and second, a list of optional arugments. The `apply` method like `call` method invokes the function immediately.
+The `apply` method is exactly similar to `call` except that it only takes two arguments. First the value of `this` and second, a list of optional arguments. The `apply` method like `call` method invokes the function immediately.
 
 ```js
 let Anku = {
@@ -144,7 +144,7 @@ The difference between `call` and `apply` is obvious in above example. Also, not
 
 #### Working with bind
 
-In `bind` parameters works just like call but it returns a function with the context of `this` bound already! Let us have a look at the code example given below:
+In `bind` parameters work just like the `call` but it returns a function with the context of `this` bound already! Let us have a look at the code example given below:
 
 ```js
 let Anku = {
@@ -180,6 +180,6 @@ let Nikhil = new Person("Nikhil", "Jha");
 
 console.log(Nikhil.lastName); // Jha
 ```
-If you only consider the function `Person` then `this` keyword inside it refers to the `window` object but when a function is called in conjuction with `new` keyword, `this` inside the function refers to the object that is created. `Person` function is also called constructor function in OOP.
+If you only consider the function `Person` then `this` keyword inside it refers to the `window` object but when a function is called in conjunction with the `new` keyword, `this` inside the function refers to the object that is created. `Person` function is also called constructor function in OOP.
 
-This seems like a lot of rules but after some practice you won't need any rule to determine the value of `this`. It becomes obvious.
+This seems like a lot of rules but after some practice, you won't need any rule to determine the value of `this`. It becomes obvious.
