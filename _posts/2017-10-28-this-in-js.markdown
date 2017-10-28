@@ -1,0 +1,185 @@
+---
+layout: post
+title: this keyword in Javascript
+date: 2017-10-28
+---
+
+<p class="intro"><span class="intro">I</span> have only posted about CSS/Flexbox as of now. Today, I decided to post about Javascript and explaining <code>this keyword</code> is the best way to start.</p>
+
+I have taken Colt Steel's <a href="https://www.udemy.com/the-web-developer-bootcamp/" target="_blank">Web Developer Bootcamp</a>. In that course, Elie has explained `this keyword` pretty well. I am going to use his method or his rules to explain `this keyword` here.
+
+
+Let us start by asking what `this keyword` really is? Well, `this` is a reserved keyword in javascript whose value gives the context of current scope. It's value can be determined using four rules (global, object/implicit, explicit, new).
+
+### 1 - Global Context
+
+> When `this` is not inside a declared object, it's value is the `window` object.
+
+Let's take a look at below code sample to understand this:
+
+```js
+console.log(this); // window
+
+function whatIsThis() {
+  return this;
+}
+
+console.log(whatIsThis()); // window
+
+function workingWithThis() {
+  // since the value of this is window here
+  // person will be a global variable attached to window object
+  this.person = "Anku";
+}
+
+workingWithThis();
+
+console.log(person); // Anku
+```
+
+### 2 - Implict/Object
+
+>When the `this keyword` is inside a declared object, it's value will always be it's closest parent object.
+
+```js
+let person = {
+  firstName: 'Anku',
+
+  sayHi: function() {
+    return 'Hi! ' + this.firstName;
+  },
+  
+  determineContext: function() {
+    return this === person;
+  }
+}
+
+person.sayHi(); // Hi! Anku
+person.determineContext(); // true
+```
+
+Inside `sayHi` and `determineContext` functions we used `this` and it's value was it's closest parent object (person object). So far so good right? Let us have a look at nested objects.
+
+```js
+let person = {
+  firstName: 'Anku',
+
+  sayHi: function() {
+    return 'Hi! ' + this.firstName;
+  },
+  
+  determineContext: function() {
+    return this === person;
+  },
+
+  // Hey look! An object inside an object
+  dog: { 
+    
+    sayHello: function() {
+      return 'Hello! ' + this.firstName;
+    },
+
+    determineContext: function() {
+      return this === person;
+    }
+  }
+}
+
+
+person.sayHi(); // Hi! Anku
+person.determineContext(); // true
+
+person.dog.sayHello(); // Hello! undefined
+person.dog.determineContext(); // false
+```
+
+The context or the value of `this` inside the `sayHello` function object was it's closest parent object i.e. `dog` object. The `dog` object doesn't have any `firstName` property. Hence, it returned `undefined`. `determineContext` inside dog object also returned false because the value of `this` was `dog` and not `person`.
+
+### 3 - Explicit Binding
+
+>Choose what we want the context of `this` to be using `call`, `apply`, and `bind`.
+
+We can set/change the value of this inside any function by using `call`, `apply`, and `bind` methods. The table given below gives us more information about these methods.
+
+| **Name of Methods** |     **Parameters**    | **Invoke Immediately** |
+|:-------------------:|:---------------------:|:----------------------:|
+|         Call        | thisArg, a, b, c, ... |           Yes          |
+|        Apply        | thisArg, [a,b,c, ...] |           Yes          |
+|         Bind        | thisArg, a, b, c, ... |           No           |
+
+#### Working with call
+
+The call method takes the value of `this` and infinite number of optional arguments. Above, when we called `sayHello` function inside `dog` object, it returned `Hello! undefined`. I want to change the value of `this` inside `dog` object to the `person` object and call the function.
+
+```js
+// I am passing person as the arugment to call
+person.dog.sayHello.call(person); // Hello! Anku
+person.dog.determineContext.call(person); // true
+```
+Now, when we ask the value `this.firstName` inside `dog` object, it refers to the `person.firstName` and hence we get `Hello! Anku` as the output.
+
+#### Working with apply
+
+The `apply` method is exactly similar to `call` except that it only takes two arguments. First the value of `this` and second, a list of optional arugments. The `apply` method like `call` method invokes the function immediately.
+
+```js
+let Anku = {
+  firstName: 'Anku',
+
+  addNumbers: function (a,b,c,d) {
+    return this.firstName + ' just calculated ' + (a+b+c+d);
+  }
+}
+
+let Nikhil = {
+  firstName: 'Nikhil'
+}
+
+
+Anku.addNumbers(1,2,3,4);
+Anku.addNumbers.call(Nikhil, 1,2,3,4);
+Anku.addNumbers.apply(Nikhil, [1,2,3,4]);
+```
+The difference between `call` and `apply` is obvious in above example. Also, notice how `call` and `apply` are changing the value of `this` to `Nikhil` in last two lines.
+
+#### Working with bind
+
+In `bind` parameters works just like call but it returns a function with the context of `this` bound already! Let us have a look at the code example given below:
+
+```js
+let Anku = {
+  firstName: 'Anku',
+
+  addNumbers: function (a,b,c,d) {
+    return this.firstName + ' just calculated ' + (a+b+c+d);
+  }
+}
+
+let Nikhil = {
+  firstName: 'Nikhil'
+}
+
+// Storing the returned function in NikhilCalc
+let  NikhilCalc = Anku.addNumbers.bind(Nikhil, 1 ,2 ,3, 4);
+// Calling NikhilCalc
+NikhilCalc();
+```
+`bind` does not invoke the function immediately but rather returns a new function with passed context. We can then call the function later in our code.
+
+#### 4 - The new keyword
+
+>The `new` keyword is used for the function and inside the function definition the keyword `this` refers to the new object that is created.
+
+```js
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+let Nikhil = new Person("Nikhil", "Jha");
+
+console.log(Nikhil.lastName); // Jha
+```
+If you only consider the function `Person` then `this` keyword inside it refers to the `window` object but when a function is called in conjuction with `new` keyword, `this` inside the function refers to the object that is created. `Person` function is also called constructor function in OOP.
+
+This seems like a lot of rules but after some practice you won't need any rule to determine the value of `this`. It becomes obvious.
