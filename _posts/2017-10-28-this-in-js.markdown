@@ -4,7 +4,7 @@ title: this keyword in Javascript
 date: 2017-10-28
 ---
 
-<p class="intro"><span class="intro">I</span> have only posted about CSS/Flexbox as of now. Today, I decided to post about Javascript and explaining <code>this keyword</code> is the best way to start.</p>
+<p class="intro"><span class="dropcap">I</span> have only posted about CSS/Flexbox as of now. Today, I decided to post about Javascript and explaining <code>this keyword</code> is the best way to start.</p>
 
 I have taken Colt Steel's <a href="https://www.udemy.com/the-web-developer-bootcamp/" target="_blank">Web Developer Bootcamp</a>. In that course, Elie has explained `this keyword` pretty well. I am going to use his method or his rules to explain `this keyword` here.
 
