@@ -1,0 +1,104 @@
+---
+layout: post
+title: flex-grow, flex-shrink and flex-basis in Flexbox
+date: 2017-10-28
+---
+
+<p class="intro"><span class="dropcap">I</span>n my last post I talked about Javascript. Today, I am shifting my focus back to CSS Flexbox. I am going to explain <code>flex</code> property.</p>
+
+`flex` is a shorthand property for `flex-grow`, `flex-shrink` and `flex-basis`. All these properties are applied on flex items. Let us take a look at the starter code that I am going to use for explanation:
+
+```html
+<div class="container">
+  <div class="box box1">one 😎</div>
+  <div class="box box2">two 🍕</div>
+  <div class="box box3">three 🙏</div>
+  <div class="box box4">four ⛑</div>
+</div>
+```
+```css
+.box {
+  color:white;
+  font-size: 30px;
+  text-align: center;
+  text-shadow:4px 4px 0 rgba(0,0,0,0.1);
+  padding:10px;
+}
+
+/* Colours for each box */
+.box1 { background:#1abc9c;}
+.box2 { background:#3498db;}
+.box3 { background:#9b59b6;}
+.box4 { background:#34495e;}
+
+.container {
+  display:flex;
+  border: 10px solid black;
+}
+```
+<figure>
+  <img src="{{ '/assets/img/posts/flex.png' | prepend: site.baseurl }}">
+  <figcaption>Output for starter code</figcaption>
+</figure>
+
+### flex-grow
+
+If there is extra space available in the flex container then flex-items can be made to grow to consume that extra space. `flex-grow` dictates what amount of the available space inside the flex container the item should take up. The default value of `flex-grow` is 0. Let us set `flex-grow` of all flex items to `1` and see what happens.
+
+```css
+.box {
+  flex-grow: 1;
+}
+```
+
+<figure>
+  <img src="{{ '/assets/img/posts/flex-grow-1.png' | prepend: site.baseurl }}">
+  <figcaption>flex-grow: 1</figcaption>
+</figure>
+
+As all the flex items have their `flex-grow` set to `1`, they are taking extra space in equal proportion. What will happen if we set `flex-grow` of a particular item to be `3`? 
+
+```css
+.box2 {
+  flex-grow: 3;
+}
+```
+
+<figure>
+  <img src="{{ '/assets/img/posts/flex-grow-3.png' | prepend: site.baseurl }}">
+  <figcaption>flex-grow: 3</figcaption>
+</figure>
+
+We can see here that box 2 is taking up thrice as much extra available space than other flex items.
+
+### flex-shrink
+
+`flex-shrink` is exactly opposite of `flex-grow`. If there is not enough space available in flex container then flex items need to shrink. `flex-shrink` defines the proportion in which all flex items will shrink. Its default value is `1`. Hence, all flex items will shrink in equal proportion by default. Let us set the `flex-shrink` of box 1 to `4` and resize the window.
+
+```css
+.box1 {
+  flex-shrink: 4;
+}
+```
+<figure>
+  <img src="{{ '/assets/img/posts/flex-shrink-4.png' | prepend: site.baseurl }}">
+  <figcaption>flex-shrink: 4</figcaption>
+</figure>
+
+We can see that box 1 is shrinking more than other flex items.
+
+### flex-basis
+
+This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means "look at my width or height property". `flex-basis` may look similar to `width` property but it is not. It defines the default size of flex item along main axis. So, when the `flex-direction` will change to `column` then `flex-basis` will similarize with `height` property rather than `width`. Its default value is `auto`.
+
+### flex
+
+`flex-grow`, `flex-shrink` and `flex-basis`, all three can be set in a single line using `flex` property. In fact, it is recommended that you use `flex` instead of using three properties seperately. `flex-shrink` and `flex-basis` are optional.
+
+```css
+.item {
+  flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+}
+```
+
+This is all about `flex` property in Flexbox. I would like to remind everyone that I am learning Flexbox through a great free course <a href="https://flexbox.io" target="_blank" >What The Flex Box </a> by Wes Bos. I highly recommend it if you want to learn Flexbox in more detail.
