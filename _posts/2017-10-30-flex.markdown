@@ -4,9 +4,9 @@ title: flex-grow, flex-shrink and flex-basis in Flexbox
 date: 2017-10-28
 ---
 
-<p class="intro"><span class="dropcap">I</span>n my last post I talked about Javascript. Today, I am shifting my focus back to CSS Flexbox. I am going to explain <code>flex</code> property.</p>
+<p class="intro"><span class="dropcap">I</span>n my last post, I talked about Javascript. Today, I am shifting my focus back to CSS Flexbox. I am going to explain <code>flex</code> property.</p>
 
-`flex` is a shorthand property for `flex-grow`, `flex-shrink` and `flex-basis`. All these properties are applied on flex items. Let us take a look at the starter code that I am going to use for explanation:
+`flex` is a shorthand property for `flex-grow`, `flex-shrink`, and `flex-basis`. All these properties are applied to flex items. Let us take a look at the starter code that I am going to use for the explanation:
 
 ```html
 <div class="container">
@@ -89,11 +89,11 @@ We can see that box 1 is shrinking more than other flex items.
 
 ### flex-basis
 
-This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means "look at my width or height property". `flex-basis` may look similar to `width` property but it is not. It defines the default size of flex item along main axis. So, when the `flex-direction` will change to `column` then `flex-basis` will similarize with `height` property rather than `width`. Its default value is `auto`.
+This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means "look at my width or height property". `flex-basis` may look similar to `width` property but it is not. It defines the default size of flex item along the main axis. So, when the `flex-direction` will change to `column` then `flex-basis` will similarize with `height` property rather than `width`. Its default value is `auto`.
 
 ### flex
 
-`flex-grow`, `flex-shrink` and `flex-basis`, all three can be set in a single line using `flex` property. In fact, it is recommended that you use `flex` instead of using three properties seperately. `flex-shrink` and `flex-basis` are optional.
+`flex-grow`, `flex-shrink` and `flex-basis`, all three can be set in a single line using `flex` property. In fact, it is recommended that you use `flex` instead of using three properties separately. `flex-shrink` and `flex-basis` are optional.
 
 ```css
 .item {
