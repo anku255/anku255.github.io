@@ -44,7 +44,7 @@ One box will take up 33.333% width of the container. So, only 3 boxes should be 
 </figure>   
 
 
-We can see that the boxes are shrinking themselves and staying in the first row. To change that we need to change `flex-direction` to `wrap`. Then, the output would look something like below:
+We can see that the boxes are shrinking themselves and staying in the first row. To change that we need to change `flex-wrap` to `wrap`. Then, the output would look something like below:
 
 <figure>
   <img src="{{ '/assets/img/posts/flex-wrap-wrap.png' | prepend: site.baseurl }}" alt="position of boxes for wrap flex-wrap">
