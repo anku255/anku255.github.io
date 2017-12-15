@@ -1,7 +1,7 @@
 ---
 layout: post
 title: let, const and var in Javascript
-date: 2017-10-28
+date: 2017-12-15
 ---
 
 <p class="intro"><span class="dropcap">R</span>ecently, I started taking a course <a href="https://es6.io" target="_blank" >ES6 For Everyone </a> by Wes Bos to brush up my ES6. I will be posting about ES6 as I go through the course.
